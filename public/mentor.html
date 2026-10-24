@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Pathfinder mentor console</title>
+  <link rel="icon" href="/icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body style="padding-bottom:32px">
+  <header class="top"><div class="top-in"><a class="brand" href="/"><b>Pathfinder</b><span>Mentor console</span><i class="dash" aria-hidden="true"></i></a></div></header>
+  <main>
+    <section id="login">
+      <h1>Mentor sign in</h1>
+      <p class="muted">Enter the mentor passcode to see and answer student questions.</p>
+      <form id="login-form">
+        <label for="pass">Passcode</label>
+        <input type="password" id="pass" autocomplete="current-password" required>
+        <label for="who">Your first name <span class="hint">Shown with your answers</span></label>
+        <input type="text" id="who" maxlength="40" autocomplete="given-name">
+        <p style="margin-top:14px"><button class="btn" type="submit">Sign in</button></p>
+        <p id="login-msg" class="small" role="alert"></p>
+      </form>
+    </section>
+    <section id="console" hidden>
+      <h1>Student questions</h1>
+      <p class="muted small">Questions are anonymous. Answers appear on the public board with your first name. Keep answers kind, specific and short.</p>
+      <p><button class="btn ghost small" id="refresh" type="button">Refresh</button> <button class="btn ghost small" id="signout" type="button">Sign out</button></p>
+      <h2>Support requests <span id="rcount" class="tag"></span></h2>
+      <p class="muted small">Students who chose Mentorship or One-on-one session shared their contact details so you can reach them. Mark a request handled when you have been in touch.</p>
+      <div id="requests"></div>
+      <h2>Waiting for an answer <span id="pcount" class="tag"></span></h2>
+      <div id="pending"></div>
+      <h2>Recently answered</h2>
+      <div id="answered"></div>
+      <h2>Reset a student password</h2>
+      <details class="card">
+        <summary>Open reset form</summary>
+        <p class="small muted" style="margin-top:10px">Use this when a student forgot their password. Confirm who they are first. They are signed out on all phones, and you give them the temporary password yourself.</p>
+        <form id="reset-form">
+          <label for="r-id">Student email or mobile</label>
+          <input type="text" id="r-id" autocomplete="off" maxlength="100">
+          <label for="r-pw">Temporary password <span class="hint">At least 8 characters</span></label>
+          <input type="text" id="r-pw" autocomplete="off" maxlength="200">
+          <p style="margin-top:12px"><button class="btn small" type="submit">Reset password</button></p>
+          <p id="reset-msg" class="small" role="status"></p>
+        </form>
+      </details>
+    </section>
+  </main>
+  <script src="/js/mentor.js"></script>
+</body>
+</html>
