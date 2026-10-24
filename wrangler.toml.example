@@ -1,0 +1,13 @@
+# Optional. Only use this if you deploy from the command line and want settings in a file.
+# NOTE: once a Pages project has a wrangler.toml, the dashboard locks its bindings.
+# If you set bindings in the dashboard instead (recommended for first deploy), do not add this file.
+name = "pathfinder"
+compatibility_date = "2026-10-01"
+pages_build_output_dir = "public"
+
+# [[kv_namespaces]]
+# binding = "PF_KV"
+# id = "<your KV namespace id>"
+
+# [ai]
+# binding = "AI"
